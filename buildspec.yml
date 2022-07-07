@@ -21,7 +21,6 @@ phases:
       - rm -R node_modules
       - rm -R public
       - rm -R src
-      - rm -R .git
       - mv build/* .
 
 # Include only the files required for your application to run.
