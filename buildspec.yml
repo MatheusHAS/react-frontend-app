@@ -20,7 +20,7 @@ phases:
       - rm -rf *.md
       - |
         find ./ -mindepth 1 -maxdepth 1 -type d -not -name build \ 
-          -exec echo rm -rf '{}' \;
+          -exec rm -rf '{}' \;
       - mv build/* .
 
 # Include only the files required for your application to run.
