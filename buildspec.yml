@@ -21,7 +21,6 @@ phases:
       - rm -R node_modules
       - rm -R public
       - rm -R src
-      - rm -R test
       - rm -R .git
       - mv build/* .
 
