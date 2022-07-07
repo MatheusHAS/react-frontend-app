@@ -15,8 +15,15 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - rm -rf *.json
+      - rm -rf .gitignore
+      - rm -rf *.md
+      - |
+        find ./ -mindepth 1 -maxdepth 1 -type d -not -name build \ 
+          -exec echo rm -rf '{}' \;
+      - mv build/* .
 
 # Include only the files required for your application to run.
 artifacts:
   files:
-    - build/*
+    - '**/*'
