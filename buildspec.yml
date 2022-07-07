@@ -15,15 +15,13 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - rm -rf *.json
-      - rm -rf .gitignore
-      - rm -rf *.md
-      - rm -R node_modules
-      - rm -R public
-      - rm -R src
-      - mv build/* .
 
 # Include only the files required for your application to run.
 artifacts:
   files:
     - '**/*'
+  base-directory: 'build'
+
+cache:
+  paths:
+    - './node_modules/**/*'
