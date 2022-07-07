@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       nodejs: 16
     commands:
-      - echo Installing NestJS...
+      - echo Installing dependencies...
       - npm install
   build:
     commands:
@@ -18,9 +18,11 @@ phases:
       - rm -rf *.json
       - rm -rf .gitignore
       - rm -rf *.md
-      - |
-        find ./ -mindepth 1 -maxdepth 1 -type d -not -name build \ 
-          -exec rm -rf '{}' \;
+      - rm -R node_modules
+      - rm -R public
+      - rm -R src
+      - rm -R test
+      - rm -R .git
       - mv build/* .
 
 # Include only the files required for your application to run.
